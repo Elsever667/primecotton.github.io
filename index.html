@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MKT IK MMC</title>
+  <style>
+    /* Ümumi Stil */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 40px;
+    }
+
+    /* "Cihaz haqqında məlumatlar" başlığı */
+    .main-title {
+      font-size: 30px;
+      color: #333;
+    }
+
+    /* Cihazları 3 sütun şəklində göstərmək üçün stil */
+    .devices-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 20px;
+    }
+
+    .device-item {
+      width: calc(33% - 20px);
+      margin-bottom: 20px;
+      box-sizing: border-box;
+    }
+
+    .device-title {
+      font-size: 24px;
+      color: #333;
+      cursor: pointer;
+      padding: 10px;
+      background-color: #007BFF;
+      border-radius: 5px;
+      width: 100%;
+      transition: background-color 0.3s, transform 0.3s;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .device-title:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+
+    .device-info {
+      display: none;
+      margin-top: 15px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      color: #555;
+      font-size: 16px;
+      line-height: 1.6;
+      transition: all 0.3s ease;
+      text-align: left;
+      width: 100%;
+    }
+
+    .device-info p {
+      margin: 10px 0;
+      font-size: 16px;
+    }
+
+    .device-info p span {
+      font-weight: bold;
+      color: #333;
+    }
+
+    /* Logo stilini buraya əlavə edə bilərik */
+    .logo {
+      max-width: 500px;
+      max-height: 300px;
+    }
+
+    /* Footer stilini əlavə et */
+    .footer {
+    background-color: rgb(245, 168, 0); /* Qaranlıq rəng */
+    color: rgb(6, 6, 6); /* Yazılar ağ olsun */
+    text-align: center; /* Mərkəzə yığmaq */
+    padding: 5px 0px; /* Yuxarı və aşağı boşluq */
+    position: relative;
+    bottom: 0px;
+    width: 100%; /* Tam genişlik */
+    margin-top: 40px;
+    height: 75px;
+    }
+
+    /* Öz adınızı vurgulamaq */
+    .footer p strong {
+    font-size: 18px; /* Adın ölçüsünü böyüdürük */
+    color: rgb(21, 20, 19); /* Adı fərqli rənglə vurğulayırıq */
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Logo əlavə etmək istəsən burada yerləşdirə bilərik -->
+  <img src="Logo/logo.png" alt="MKT IK MMC Logo" class="logo"> <!-- Logo URL-ni bura əlavə et -->
+
+  <!-- Əsas başlıq -->
+  <h2 class="main-title">Cihazlar Haqqında Məlumat</h2>
+
+  <div class="devices-row">
+    <div class="device-item">
+      <h2 onclick="toggleInfo()" class="device-title">Ametek CTC-660</h2>
+      <div id="iphone-info" class="device-info">
+        <p><span>Istehsalçı:</span>   Ametek</p>
+        <p><span>Tip:</span> CTC-660</p>
+        <p><span>Seria №:</span> 674139-00519</p>
+        <p><span>Diapazon:</span> 28 ~ 660 °C</p>
+        <p><span>Sertifikat:</span> <a href="Pdf/11. Ametek CTC-660 (10.10.23-09.10.25).pdf"> Kalibrləmə Sertifikatı </a></p>
+      </div>
+    </div>
+
+    <div class="device-item">
+      <h2 onclick="toggleInfo()" class="device-title">Ametek STS-120 A</h2>
+      <div id="samsung-info" class="device-info">
+        <p><span>Istehsalçı:</span>   Ametek</p>
+        <p><span>Tip:</span> STS-120 A</p>
+        <p><span>Seria №:</span> 661235-05</p>
+        <p><span>Diapazon:</span> 0 ~ 660 °C</p>
+        <p><span>Sertifikat:</span> <a href="Pdf/12. Ametek CTC-660 platin müqavimət termometri (10.10.23-09.10.25).pdf"> Kalibrləmə Sertifikatı </a></p>
+      </div>
+    </div>
+
+    <div class="device-item">
+      <h2 onclick="toggleInfo()" class="device-title">Druck DPI 140 (700 bar)</h2>
+      <div id="macbook-info" class="device-info">
+        <p><span>Istehsalçı:</span>   Druck</p>
+        <p><span>Tip:</span> DPI 140 (700 bar)</p>
+        <p><span>Seria №:</span> 11412085</p>
+        <p><span>Diapazon:</span> 0 ~ 700 bar</p>
+        <p><span>Sertifikat:</span> <a href="Pdf/14. Druck DPİ 104 (07.12.23-06.12.25).pdf"> Kalibrləmə Sertifikatı </a></p>
+      </div>
+    </div>
+
+    <div class="device-item">
+        <h2 onclick="toggleInfo()" class="device-title">Druck DPI 140 (20 bar)</h2>
+        <div id="macbook-info" class="device-info">
+        <p><span>Istehsalçı:</span>   Druck</p>
+        <p><span>Tip:</span> DPI 140 (20 bar)</p>
+        <p><span>Seria №:</span> 5640786</p>
+        <p><span>Diapazon:</span> 0 ~ 20 bar</p>
+        <p><span>Sertifikat:</span> <a href="Pdf/15. Druck DPİ 104 20bar (06.02.25-05.02.26).pdf"> Kalibrləmə Sertifikatı </a></p>
+        </div>
+    </div>
+
+    <div class="device-item">
+        <h2 onclick="toggleInfo()" class="device-title">Fluke 754</h2>
+        <div id="macbook-info" class="device-info">
+        <p><span>Istehsalçı:</span>   Fluke</p>
+        <p><span>Tip:</span> 754 </p>
+        <p><span>Seria №:</span> 48160017</p>
+        <p><span>Diapazon:</span>300 V(AC\DC)</p>
+        <p>110.00 mA</p>
+        <p>10.000 kΩ</p>
+        <p>50.000 kHz</p>
+        <p>-210 ~ 1200 °C</p>
+        <p><span>Sertifikat:</span> <a href="Pdf/13. Fluke 754 (03.02.25-03.02.26).pdf"> Kalibrləmə Sertifikatı </a></p>        
+        </div>
+    </div>
+
+    <div class="device-item">
+        <h2 onclick="toggleInfo()" class="device-title">Therma Elite ETİ</h2>
+        <div id="macbook-info" class="device-info">
+        <p><span>Istehsalçı:</span>   ETI</p>
+        <p><span>Tip:</span> K</p>
+        <p><span>Seria №:</span> D23040071</p>
+        <p><span>Diapazon:</span> -100 ~ 1100 °C</p>
+        <p><span>Sertifikat:</span> <a href="Pdf/16. Elektron termometr K tip Sensorlu (23.01.24-22.01.25).pdf"> Kalibrləmə Sertifikatı </a></p>
+        </div>
+    </div>
+
+    <div class="device-item">
+        <h2 onclick="toggleInfo()" class="device-title">Termocüt MKT 001</h2>
+        <div id="macbook-info" class="device-info">
+        <p><span>Istehsalçı:</span>   ETI</p>
+        <p><span>Tip:</span> K</p>
+        <p><span>Seria №:</span> MKT 001</p>
+        <p><span>Diapazon:</span> -200 ~ 1100 °C</p>
+        <p><span>Sertifikat:</span> <a href="Pdf/17. k tipli termocüt MKT 001 (-200-1100C) (06.10.23-05.10.24).pdf">Kalibrləmə Sertifikatı </a></p>
+         </div>
+    </div> 
+
+    <div class="device-item">
+        <h2 onclick="toggleInfo()" class="device-title">Termocüt MKT 002</h2>
+        <div id="macbook-info" class="device-info">
+        <p><span>Istehsalçı:</span>   ETI</p>
+        <p><span>Tip:</span> K</p>
+        <p><span>Seria №:</span> MKT 002</p>
+        <p><span>Diapazon:</span> -60 ~ 350 °C</p>
+        <p><span>Sertifikat:</span> <a href="Pdf/18. k tipli termocüt MKT 002 (-60-350C) (06.10.23-05.10.24).pdf">Kalibrləmə Sertifikatı </a></p>
+        </div>
+    </div>
+
+    <div class="device-item">
+        <h2 onclick="toggleInfo()" class="device-title">Termocüt MKT 003</h2>
+        <div id="macbook-info" class="device-info">
+        <p><span>Istehsalçı:</span>   ETI</p>
+        <p><span>Tip:</span> K</p>
+        <p><span>Seria №:</span> MKT 003</p>
+        <p><span>Diapazon:</span> -60 ~ 600 °C</p>
+        <p><span>Sertifikat:</span> <a href="Pdf/19. k tipli termocüt MKT 003 (-60-600C) (06.10.23-05.10.24).pdf">Kalibrləmə Sertifikatı </a></p>
+        </div>
+    </div>
+
+    <div class="device-item">
+        <h2 onclick="toggleInfo()" class="device-title">Çəki daşı dəsti (E2)</h2>
+        <div id="macbook-info" class="device-info">
+        <p><span>Istehsalçı:</span>   Hafner</p>
+        <p><span>Tip:</span> E2</p>
+        <p><span>Seria №:</span> 3820919</p>
+        <p><span>Diapazon:</span> 1 mg ~ 500 g</p>
+        <p><span>Sertifikat:</span> <a href="Pdf/1. E2 sinif çəki daşı dəsti 1mq-500q (30.09.19-29.09.24).pdf">Kalibrləmə Sertifikatı </a></p>
+        </div>
+    </div>
+
+    <div class="device-item">
+        <h2 onclick="toggleInfo()" class="device-title">Çəki daşı dəsti (F1)</h2>
+        <div id="macbook-info" class="device-info">
+        <p><span>Istehsalçı:</span>   Hafner</p>
+        <p><span>Tip:</span> F1</p>
+        <p><span>Seria №:</span> 4180919</p>
+        <p><span>Diapazon:</span> 1 g ~ 10 kg</p>
+        <p><span>Sertifikat:</span> <a href="Pdf/2. F1 sinif çəki daşı dəsti 1q-10kq (30.09.19-29.09.24).pdf">Kalibrləmə Sertifikatı </a></p>
+        </div>
+    </div>  
+
+    <div class="device-item">
+        <h2 onclick="toggleInfo()" class="device-title">Çəki daşı (F1)</h2>
+        <div id="macbook-info" class="device-info">
+        <p><span>Istehsalçı:</span>   Hafner</p>
+        <p><span>Tip:</span> F1</p>
+        <p><span>Seria №:</span> 4480919</p>
+        <p><span>Diapazon:</span> 10 kg</p>
+        <p><span>Sertifikat:</span> <a href="Pdf/3. F1 sinif çəki daşı dəsti 10kq (30.09.19-29.09.24).pdf">Kalibrləmə Sertifikatı </a></p>
+        </div>
+    </div>
+
+    <div class="device-item">
+        <h2 onclick="toggleInfo()" class="device-title">Çəki daşı (F1)</h2>
+        <div id="macbook-info" class="device-info">
+        <p><span>Istehsalçı:</span>   Hafner</p>
+        <p><span>Tip:</span> F1</p>
+        <p><span>Seria №:</span> 4260919</p>
+        <p><span>Diapazon:</span> 20 kg</p>
+        <p><span>Sertifikat:</span> <a href="Pdf/4. F1 sinif çəki daşı 20kq (27.09.19-26.09.24).pdf">Kalibrləmə Sertifikatı </a></p>
+        </div>
+    </div>
+
+    <div class="device-item">
+        <h2 onclick="toggleInfo()" class="device-title">Çəki daşı (F1)</h2>
+        <div id="macbook-info" class="device-info">
+        <p><span>Istehsalçı:</span>   Hafner</p>
+        <p><span>Tip:</span> F1</p>
+        <p><span>Seria №:</span> 4250919</p>
+        <p><span>Diapazon:</span> 20 kg</p>
+        <p><span>Sertifikat:</span> <a href="Pdf/5. F1 sinif çəki daşı 20kq (27.09.19-26.09.24).pdf">Kalibrləmə Sertifikatı </a></p>
+        </div>
+    </div>
+
+    <div class="device-item">
+        <h2 onclick="toggleInfo()" class="device-title">Çəki daşıları 18 ədəd (M1)</h2>
+        <div id="macbook-info" class="device-info">
+        <p><span>Istehsalçı:</span>   Esit</p>
+        <p><span>Tip:</span> M1</p>
+        <p><span>Seria №:</span> 1-6, 76-84, 272-277</p>
+        <p><span>Diapazon:</span> 500 kg, 1000 kg</p>
+        <p><span>Sertifikat:</span> <a href="Pdf/6. M1 sinif Çəki daşları 500, 1000 kq (30.08.23-29.08.26).pdf">Kalibrləmə Sertifikatı </a></p>
+        </div>
+    </div>  
+
+    <div class="device-item">
+        <h2 onclick="toggleInfo()" class="device-title">Çəki daşıları 2 ədəd (M1)</h2>
+        <div id="macbook-info" class="device-info">
+        <p><span>Istehsalçı:</span>   Demirkol</p>
+        <p><span>Tip:</span> M1</p>
+        <p><span>Seria №:</span> 921,922</p>
+        <p><span>Diapazon:</span> 10 kg</p>
+        <p><span>Sertifikat:</span> <a href="Pdf/7. M1 sinif çəki daşı 10 kq,  2 ədəd (14.12.23-13.12.26).pdf">Kalibrləmə Sertifikatı </a></p>
+        </div>
+    </div>
+
+    <div class="device-item">
+        <h2 onclick="toggleInfo()" class="device-title">Çəki daşıları 31 ədəd (M1)</h2>
+        <div id="macbook-info" class="device-info">
+        <p><span>Istehsalçı:</span>   Demirkol</p>
+        <p><span>Tip:</span> M1</p>
+        <p><span>Seria №:</span> 5877-5907</p>
+        <p><span>Diapazon:</span> 20 kg</p>
+        <p><span>Sertifikat:</span> <a href="Pdf/8. M1 sinif çəki daşı 20 kq, 31 ədəd (14.12.23-13.12.26).pdf">Kalibrləmə Sertifikatı </a></p>
+        </div>
+    </div>
+
+    <div class="device-item">
+        <h2 onclick="toggleInfo()" class="device-title">Çəki daşıları 20 ədəd (M1)</h2>
+        <div id="macbook-info" class="device-info">
+        <p><span>Istehsalçı:</span>   Demirkol</p>
+        <p><span>Tip:</span> M1</p>
+        <p><span>Seria №:</span> 5922-5931</p>
+        <p><span>Diapazon:</span> 20 kg</p>
+        <p><span>Sertifikat:</span> <a href="Pdf/9. M1 sinif çəki daşı 20 kq, 10 ədəd (14.12.23-13.12.26).pdf">Kalibrləmə Sertifikatı </a></p>
+        </div>
+    </div>  
+
+    <div class="device-item">
+        <h2 onclick="toggleInfo()" class="device-title">Çəki daşıları 14 ədəd (M1)</h2>
+        <div id="macbook-info" class="device-info">
+        <p><span>Istehsalçı:</span>   Demirkol</p>
+        <p><span>Tip:</span> M1</p>
+        <p><span>Seria №:</span> 5908-5921</p>
+        <p><span>Diapazon:</span> 20 kg</p>
+        <p><span>Sertifikat:</span> <a href="Pdf/10. M1 sinif çəki daşı 20 kq, 14 ədəd (14.12.23-13.12.26).pdf">Kalibrləmə Sertifikatı </a></p>
+        </div>
+    </div>
+
+    <div class="device-item">
+        <h2 onclick="toggleInfo()" class="device-title">Rotronic</h2>
+        <div id="macbook-info" class="device-info">
+        <p><span>Istehsalçı:</span>   Rotronic</p>
+        <p><span>Tip:</span> BL-1D</p>
+        <p><span>Seria №:</span> A19051530</p>
+        <p><span>Diapazon:</span> -30 ~ 70 °C</p>
+        <p>0 ~ 100 %rH</p>
+        <p><span>Sertifikat:</span> <a href="Pdf/22. Termohiqrometr (19.01.24-18.01.25).pdf">Kalibrləmə Sertifikatı </a></p>
+        </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleInfo() {
+      var info = event.target.nextElementSibling;
+      if (info.style.display === 'none') {
+        info.style.display = 'block';
+      } else {
+        info.style.display = 'none';
+      }
+    }
+  </script>
+
+    <footer class="footer">
+        <p>&copy; 2025 MKT IK MMC. Bütün hüquqlar qorunur.</p>
+        <p>Hazırladı: <strong>Ələsgərov Elsevər</strong></p>
+    </footer>
+  
+</body>
+</html>
